@@ -1,0 +1,2 @@
+class PropertyKind < ApplicationRecord
+end
