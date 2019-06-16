@@ -1,0 +1,69 @@
+<%= form_with(model: listing, local: true) do |form| %>
+  <% if listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+
+      <ul>
+      <% listing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :property_kind %>
+    <%= form.collection_select :property_kind, PropertyKind.all, :id, :name, prompt: true %>
+    <%#= form.number_field :property_kind, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :beds %>
+    <%= form.number_field :beds, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :baths %>
+    <%= form.number_field :baths, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :plus %>
+    <%= form.check_box :plus, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :star_rating %>
+    <%= form.number_field :star_rating, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :price %>
+    <%= form.number_field :price, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :rental_period %>
+    <%= form.text_field :rental_period, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if listing.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', listing, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if listing.persisted? %>
+      <%= link_to "Cancel", listing, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", listings_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,33 @@
+<div class="page-header">
+  <%= link_to listings_path, class: 'btn btn-default' do %>
+    All Listings
+  <% end %>
+  <%= link_to edit_listing_path(@listing), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show listing</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Beds:</dt>
+  <dd><%= @listing.beds %></dd>
+
+  <dt>Baths:</dt>
+  <dd><%= @listing.baths %></dd>
+
+  <dt>Title:</dt>
+  <dd><%= @listing.title %></dd>
+
+  <dt>Plus:</dt>
+  <dd><%= @listing.plus %></dd>
+
+  <dt>Star rating:</dt>
+  <dd><%= @listing.star_rating %></dd>
+
+  <dt>Price:</dt>
+  <dd><%= @listing.price %></dd>
+
+  <dt>Rental period:</dt>
+  <dd><%= @listing.rental_period %></dd>
+
+</dl>

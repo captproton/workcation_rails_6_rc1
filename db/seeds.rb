@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+amenities 			= Amenity.create!(
+				[{name: "Pool"}, {name: "Balcony"}, {name: "Beach"}, {name: "Pet friendly"}, 
+				 {name: "Kid friendly"}, {name: "Parking"}, {name: "Air Conditioning"}
+				]
+			)
+kinds_of_properties	= PropertyKind.create!(
+				[{name: "House"}, {name: "Apartment"}, {name: "Loft"}, {name: "Townhouse"}
+				]
+			)
