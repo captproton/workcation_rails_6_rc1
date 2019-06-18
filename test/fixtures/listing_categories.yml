@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  listing: one
+  property_kind: one
+
+two:
+  listing: two
+  property_kind: two

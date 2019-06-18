@@ -1,0 +1,11 @@
+<%= render partial: 'header'%>
+<div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
+	<%= render partial: 'search_filters'%>
+	<main class="py-6 xl:flex-1 xl:overflow-x-hidden">
+
+		<!--  -->
+		<%= render partial: 'location', collection: @locations %>
+	</main>
+</div>
+<!-- built files will be auto injected -->
+<script type="text/javascript" src="/app.js"></script>
