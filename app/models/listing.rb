@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-	# belongs_to 		:property_kind
+	belongs_to		:location
 	has_many 		:property_amenities
 	has_many 		:amenities, through: :property_amenities
 	has_many 		:listing_categories

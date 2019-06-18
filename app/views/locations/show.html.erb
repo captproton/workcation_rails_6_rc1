@@ -1,0 +1,21 @@
+<div class="page-header">
+  <%= link_to locations_path, class: 'btn btn-default' do %>
+    All Locations
+  <% end %>
+  <%= link_to edit_location_path(@location), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show location</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @location.name %></dd>
+
+  <dt>Lat:</dt>
+  <dd><%= @location.lat %></dd>
+
+  <dt>Lng:</dt>
+  <dd><%= @location.lng %></dd>
+
+</dl>

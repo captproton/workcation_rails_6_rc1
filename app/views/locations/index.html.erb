@@ -1,0 +1,45 @@
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <h1>Locations</h1>
+  </div>
+
+  <div class="col-sm-6 text-right">
+  <%= link_to new_location_path, class: 'btn btn-primary' do %>
+    Add New Location
+  <% end %>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+    
+        <th>Name</th>
+    
+
+            <th>Lat</th>
+            <th>Lng</th>
+            
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @locations.each do |location| %>
+        <%= content_tag :tr, id: dom_id(location), class: dom_class(location) do %>
+          
+            <td><%= link_to location.name, location %></td>
+          
+
+                      <td><%= location.lat %></td>
+                      <td><%= location.lng %></td>
+          
+          
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

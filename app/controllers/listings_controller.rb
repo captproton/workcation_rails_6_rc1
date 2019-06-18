@@ -5,6 +5,7 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
     @listings = Listing.all
+    @locations  = Location.all
   end
 
   # GET /listings/1
@@ -69,6 +70,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:property_kind_id, :beds, :baths, :title, :plus, :star_rating, :price, :rental_period)
+      params.require(:listing).permit(:property_kind_id, :beds, :baths, :title, :plus, :star_rating, :price, :rental_period, image_url)
     end
 end

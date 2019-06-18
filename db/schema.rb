@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_16_005140) do
+ActiveRecord::Schema.define(version: 2019_06_18_034234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,18 @@ ActiveRecord::Schema.define(version: 2019_06_16_005140) do
     t.string "rental_period"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "location_id", null: false
+    t.text "image_url"
+    t.index ["location_id"], name: "index_listings_on_location_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.string "lat"
+    t.string "lng"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "description"
   end
 
   create_table "notifications", force: :cascade do |t|
@@ -133,6 +145,7 @@ ActiveRecord::Schema.define(version: 2019_06_16_005140) do
 
   add_foreign_key "listing_categories", "listings"
   add_foreign_key "listing_categories", "property_kinds"
+  add_foreign_key "listings", "locations"
   add_foreign_key "property_amenities", "amenities"
   add_foreign_key "property_amenities", "listings"
   add_foreign_key "services", "users"
